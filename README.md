@@ -67,18 +67,13 @@ colin.love@hmps.com.au
         -	OR allow newline characters to be retained to improve readability on large expressions
 -	Rungs should be able to be dragged and dropped into a branch
 -	Branches should be able to be dropped as new rungs
--	In some instances, the string editor window comes up on your left monitor even if Logix Designer is on your right monitor. It can also end up outside the bounds of your left monitor if you have different sized monitors
 -	Duplicate label error prevents moving label during online edit
--	If too many tabs are open to see them all, make sure the one you’re on is one of the visible ones.
--	Allow 2 rows of tabs
 -	Automatically adding an empty rung to an otherwise empty ladder when you open it is just annoying, especially when you’re online. It breaks the philosophy that you can explore a file without inadvertently modifying it.
 -	Interrogate AOI InOut destructiveness so that cross-references aren’t automatically marked as descructive if the AOI the data is passed to doesn’t modify it.
--	Scale the blue arrows to match the zoom level
 -	When editing a rung, don’t disable the insert rung button, just insert it at the next appropriate position
 -	Allow pasting of code in text form that hasn’t come from Logix.
     -	Eg you can copy a rung from logix into notepad as: XIC(Tag1)OTE(Tag2);   
     -	By allowing the reverse process, standard code structures could be inserted without needing another instance of Logix running
--	Ladders don’t always render correctly when scrolling during dragging of an instruction or reference.
 -	Allow dragging of output Booleans to bit instructions. (ie drag from a TON.DN bit to a subsequent XIC)
 
 ## Tags Window
@@ -100,6 +95,15 @@ colin.love@hmps.com.au
 ## Safety
 
 - Safety tags that are mapped to standard tags should be visually different when used in a safety task, rather than relying on a user's naming convention
+
+## Display
+
+-	Ladders don’t always render correctly when scrolling during dragging of an instruction or reference.
+-	In some instances, the string editor window comes up on your left monitor even if Logix Designer is on your right monitor. It can also end up outside the bounds of your left monitor if you have different sized monitors
+- Remove gradient border around active window. There are a number of unintended consequences that make it look janky
+-	If too many tabs are open to see them all, make sure the one you’re on is one of the visible ones.
+-	Allow 2 rows of tabs
+-	Scale the blue arrows to match the zoom level
 
 # More than just interface
 ## Productivity
