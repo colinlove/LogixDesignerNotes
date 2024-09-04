@@ -10,11 +10,13 @@ colin.love@hmps.com.au
 
 - Allow zoom-selection of x axis in isolated graphing mode
 - Allow order of tags/pens to be rearranged
+- Allow an autoloaded default template OR
 - Retain settings from the last created trend
   - x scale. (I’ve never used a trend with only a 2 second window, and probably never will)
   - y scale and options
   - Display milliseconds
   - Colour palette
+- Add Pen Min/Max to template
 - Make default colours for first trend pen and background a combination you can see easily
   - White background might make more sense so trend pen and legend text can be both seen
 - Allow toggling of auto scale in Y axis from the trend window
@@ -75,6 +77,7 @@ colin.love@hmps.com.au
     -	Eg you can copy a rung from logix into notepad as: XIC(Tag1)OTE(Tag2);   
     -	By allowing the reverse process, standard code structures could be inserted without needing another instance of Logix running
 -	Allow dragging of output Booleans to bit instructions. (ie drag from a TON.DN bit to a subsequent XIC)
+-	Allow (at least optionally) the ability to see the value of an InOut parameter in an AOI instance
 
 ## Tags Window
 
