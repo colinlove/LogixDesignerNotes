@@ -1,5 +1,5 @@
 # Logix Designer Feature Requests
-### (all checked up to V34, some checked to v36)
+### (most checked up to V38)
 
 I need to preface these comments with the acknowledgement that Logix designer is by far the easiest to use PLC programming software that I have used, both from a technical and interface point of view. I’ve spent most of my working life using it. Kudos to the hardware and software teams that have got us to this point. Below is a list of feature requests that range from simple interface issues to more radical features that would require PLC firmware changes. If you're a dev that works on this software, there's some pretty low hanging fruit.
 
@@ -30,8 +30,8 @@ colin.love@hmps.com.au
 - Allow right-click context menu from trend legend (particularly cross-reference)
 - Show samples as dots when zoomed in far enough on X axis
   - This could serve to highlight missed data as well as show when sampling has inadequate frequency
-- Add trends to project documentation stored in the PLC
-- Allow logs to be saved without stopping the trend
+- Add trends to project documentation stored in the PLC (retrieved via upload)
+- Allow logs to be saved without stopping the trend (set up a trend to catch an anomaly, save the data when it occurrs without missing the next occurrence)
 
 ## Cross reference
 
@@ -39,7 +39,6 @@ colin.love@hmps.com.au
 -	When a mixture of direct references and aliases are used, there is no way to sort the references in base order, because the BaseTag field is empty for non-aliased references.
 -	Keyboard shortcut for cross-reference visible when right clicking from ladder (I assumed for years that there wasn’t one)
 -	Give focus to the cross-reference list when cross-reference window is opened rather than wait for first arrow press.
--	Add a shortcut to move to the next destructive reference of current tag.
 -	The “Name” dropdown box would be more useful if it had a history of previously cross-referenced tags rather than (or as well as) a tag explorer. When going down the rabbit-hole of someone else’s code, it can be difficult to find your way back if you do more than 1 cross-reference to follow a chain of logic.
 -	Differentiate (and/or filter) based on edited (or to be removed) rungs and/or auto-refresh
     -	When you want to change every reference of a particular tag, I go to the cross reference, but as soon as you edit one instance, the cross reference can become misleading in 2 ways.
@@ -50,7 +49,7 @@ colin.love@hmps.com.au
 
 ## Indirect Addressing
 
--	Indirect addressing of a parent datatype breaks auto-complete of child objects (It works for Structure Text but not Ladder)
+-	Indirect addressing of a parent datatype breaks auto-complete of child objects (It works for Structured Text but not Ladder)
 -	Indirect addressing index autocomplete
 
 ## Ladder
@@ -82,12 +81,12 @@ colin.love@hmps.com.au
 ## Tags Window
 
 -	Switching between Monitor and Edit shouldn’t collapse the data structure you’re within
--	When selecting “monitor tag” from context menu within a ladder, the tag window does not show the element within a data structure
 -	Add a cross-reference column to the tag editor window with symbols differentiating whether a tag is used or a component within the tag is used:
     -	This tag is referenced directly
     -	A component within this tag is referenced (possibly by alias)
     -	This tag is accessed using an alias
 -	When a tag is unable to be modified due to external reading/writing, allow automatic temporary modification (and restoration) of the read/write access of the tag (or base tag) with an appropriate warning
+-	When monitoring tags over a slow connection, if an attempt is made to edit a tag's value before it is properly read, the window can be left in a state where you cannot see the value.
 
 ## Watch Window
 
@@ -113,10 +112,10 @@ colin.love@hmps.com.au
 
 -	Allow Instructions to take expressions in place of numeric input values
 -	A new instruction that functions as a Modulo operator that handles negative numbers and can output in a +/- range.
-    -	i.e. something that could accomplish CPT ((Variable+Large_Integer*2*PI+PI) MOD (2*PI)) - PI to return a value Modulo’d to a range +/- PI
+    -	i.e. something that could accomplish CPT (( Variable + Large_Integer * 2 * PI + PI ) MOD ( 2 * PI )) - PI to return a value Modulo’d to a range +/- PI
 -	It would be helpful if Motor Data was retained within the Axis configuration even if it is disassociated from a servo controller in the I/O configuration. As it is, if you need to ugrade a controller to a higher current rating, you need to re-add the motor to the axis after you delete the controller and add the new one.
 -	Axis Properties -> Parameter List -> Parameter Group dropdown refreshes sporadically when online making it difficult to select the correct group.
--	Add “Trend Rung” to the rung right click context menu to create a trend with the option to select up to 8 of the tags referenced within the instructions in the rung
+-	Add “Trend Rung” to the rung right click context menu to create a trend with the option to select up to 8 of the tags referenced within the instructions in the rung (This would change my life)
 
 # Things that are awful when using a slow network connection (like a cellular modem or VPN)
 
@@ -140,7 +139,7 @@ colin.love@hmps.com.au
 -	Data-less AOI’s that take inputs, outputs and inouts but require no retentive internal state tags. There are many small instructions that could be created to tidy up my code, but having to create instance tags for them all makes it less appealing
 -	Allow STRING data type as input or output (not just INOUT) to AOI
     -	That would allow AOI data types to contain an editable name for the item that the AOI is controlling
--	Allow STRING constants within all ladder instructions that take string tags (I mostly just want CONCAT)
+-	Allow STRING literals within all ladder instructions that take string tags (I mostly just want CONCAT)
 -	Allow more than 8 tags in a trend. If the bandwidth can cope with 8 DINTS, it can cope with lots of BOOL’s if they’re pre-packaged at the PLC end.
     -	Allow multiple separate trends to be displayed on the same time axis. This could achieve the appearance of allowing more than 8 tags in a trend AND allowing trends to be appended on-the-fly.
 -	Allow adding tags to a trend while it’s running
